@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}搜索{% endblock %}
+{% block main %}
+<div class="form-contain">
+    <form action="" method="get">
+    <input placeholder="请输入标签名" type="text" name="key_tag">
+    <input type="submit" value="搜索">
+</form>
+</div>
+<div>
+    {% if articles %}
+        <table border="1px">
+        <tr>
+            <th>标题</th>
+            <th>作者</th>
+            <th>标签</th>
+        </tr>
+        {% for x in articles %}
+            <tr>
+            <td>{{ x.title }}</td>
+            <td>{{ x.author.username }}</td>
+            <td>{% for z in x.tags %}{{ z.name }},{% endfor %}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% endif %}
+</div>
+
+<div>
+    {% if Noneres %}未找到结果！！ {% endif %}
+</div>
+{% endblock %}

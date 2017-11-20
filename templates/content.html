@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+    全部文章
+{% endblock %}
+
+{% block main %}
+{% for x in articles %}
+    <h1>标题：{{ x.title }}</h1>
+    <h4>作者：{{ x.author.username }}</h4>
+    <h4>内容：
+    {{ x.content }}</h4>
+    <hr>
+{% endfor %}
+{% endblock %}

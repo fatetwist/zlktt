@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}首页索引{% endblock %}
+{% block main %}
+<ul>
+    <li><a href="{{ url_for('search') }}">搜索</a></li>
+    <li><a href="{{ url_for('login') }}">登录</a></li>
+    <li><a href="{{ url_for('regist') }}">注册</a></li>
+    <li><a href="{{ url_for('content') }}">全部文章</a></li>
+    <li><a href="{{ url_for('raiseq') }}">发布文章</a></li>
+</ul>
+
+{% endblock %}

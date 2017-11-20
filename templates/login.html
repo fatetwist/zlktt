@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}登录{% endblock %}
+{% block head %}
+    <script src="{{ url_for('static',filename='validator.js') }}"></script>
+    <script>
+    function name_validator(){
+        x = document.getElementsByName('username');
+        if (Ifnocontent(x,'用户名为空！')){return true}else{return true}
+    }
+    </script>
+    <style>
+    .login-form{
+        width:40%;
+        text-align:center;
+    }
+    </style>
+{% endblock %}
+{% block main %}
+    <div class="login-form container">
+<h1>登录</h1>
+<form method="POST" action="" class="from-group">
+    <input type="text" placeholder="用户名或手机号码" name="username" class="form-control"><br>
+    <input type="password" placeholder="密码" name="password" class="form-control"><br>
+    <input type="submit" value="登录" class="form-control btn-primary" onsubmit="return name_validator()"><br>
+</form>
+    </div>
+{%  endblock %}
